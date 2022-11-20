@@ -16,3 +16,13 @@
             val id: Int
             val name: String // class body
         }
+
+        Objects
+  - This is an instance of a class
+  - Formed by assigning a variable to a class
+  - Example
+        val studentOne = student();
+  - We can access the members and properties of an object using the dot notation.
+  Example
+        studentOne.id = 1 // assigning the students id's value.
+        student.name //getting the students name value
