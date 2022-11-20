@@ -35,3 +35,8 @@
         class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.MyHolder>(){}
         // both Adapter and MyHolder are nested classes inside the RecyclerView and the RecyclerAdapter respectively.
 
+        Inner Classes
+  - These are nested classes marked with the inner keyword
+  - They are the opposite of Nested classes
+  - They are non-static - We access them by instances of the class.
+  - They can access members of the outer class.
