@@ -26,3 +26,12 @@
   Example
         studentOne.id = 1 // assigning the students id's value.
         student.name //getting the students name value
+
+        Nested Classes
+  This are classes that are inside other classes.
+  - In kotlin these classes are static by default - You can access them directly using their outer class.
+  - Inside the nested class you cannot access the members of the outer class.
+  - Example.
+        class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.MyHolder>(){}
+        // both Adapter and MyHolder are nested classes inside the RecyclerView and the RecyclerAdapter respectively.
+
