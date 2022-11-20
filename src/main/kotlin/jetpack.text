@@ -1,0 +1,29 @@
+Navigation
+-Movements from one activity to the other.
+- Fragments are light in weight compared to Activities and since they contain their own life cycles,
+- Jet pack provides a navigation graph to help in lightening the application.
+
+Navigation Graph
+- An xml resource file that contains all the destinations involved with your application together with the actions involved moving from one destination to the other.
+- Destinations are all the fragments associated with the application.
+- the movement is defined in the fragments meta data as actions.
+
+Bottom Navigation with a Navigation graph
+- The goal is to use fragments in your application that are hosted in a single activity.
+- The activity should consist of a NavHostFragment that will house the fragments.
+- The NavHostFragment contains of a NavController that facilitates navigation between the fragments.
+
+        --Steps--
+        1. We initialise our bottom navigation view
+         NOTE: id's of the menu items in the bottom navigation should be similar to the fragment id's in the navigation graph
+         ALSO: enable viewBinding
+
+         ActivityMainBinding bind = ActivityMainBinding.inflate(getLayoutInflater())
+
+        2. We find our NavController
+        val navHostFragment: NavHostFragment = SupportFragmentManager.findFragmentById(R.id.fragment)
+
+
+        3. We set up the bottomNavigation view with the navigation Controller
+
+         bind.bottomView.setUpWithNaVController(navHostFragment.navControler)
