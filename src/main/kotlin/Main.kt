@@ -28,4 +28,25 @@ fun main(args: Array<String>) {
         println(name)
     }
 
+    //initialising a student instance
+    val studentOne = Student()
+    studentOne.name = "charles";
+    studentOne.studentId = 1
+    studentOne.studentRegNumber = 33421748
+
+    val studentTwo = Student()
+    studentTwo.name = "ken"
+    studentTwo.studentId = 2
+    studentTwo.studentRegNumber = 32451876
+
+    //creating an array of students
+    val students: Array<Student> = arrayOf(studentOne, studentTwo)
+
+    //looping through the student array
+    for (student in students){
+        println(student)
+    }
+    //destructuring a class
+    //var(name, studentId) = studentOne
+
 }
