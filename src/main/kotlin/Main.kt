@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
     println(names[0])
 
     //dropping items in the array
-    names.drop(2) //drops the first element in the array
+    names.drop(2) //drops the first elements in the array
     names.dropLast(1) //drops the last element of the array
 
     for(name in names){
@@ -48,5 +48,9 @@ fun main(args: Array<String>) {
     }
     //destructuring a class
     //var(name, studentId) = studentOne
+
+    for (i in 10 downTo 1 step 2){
+        println(i);
+    }
 
 }
