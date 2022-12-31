@@ -3,7 +3,7 @@ fun main() {
 //    println(20.addNumbers())
 //    println(20.addNumber(20))
 
-    val intArray = printPrimeNumbers(100)
+    val intArray = printOddNumbers(100)
     for (number in intArray){
         println(number)
     }
@@ -40,4 +40,14 @@ fun printPrimeNumbers(end:Int): ArrayList<Int>{
         }
     }
     return primeNumbers
+}
+
+fun printOddNumbers(end:Int): ArrayList<Int>{
+    val oddNumbers = ArrayList<Int>()
+    for (i in 0..end){
+        if (i%2!=0){
+            oddNumbers.add(i)
+        }
+    }
+    return oddNumbers
 }
