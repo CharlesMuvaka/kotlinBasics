@@ -3,7 +3,7 @@ fun main() {
 //    println(20.addNumbers())
 //    println(20.addNumber(20))
 
-    val intArray = displayFinobaciNumbers(100)
+    val intArray = printPrimeNumbers(100)
     for (number in intArray){
         println(number)
     }
@@ -30,4 +30,14 @@ fun displayFinobaciNumbers(end:Int): ArrayList<Int>{
         finobaciNumbers.add(number)
     }
     return finobaciNumbers
+}
+
+fun printPrimeNumbers(end:Int): ArrayList<Int>{
+    val primeNumbers = ArrayList<Int>()
+    for (i in 0..end){
+        if (i%2==0){
+            primeNumbers.add(i)
+        }
+    }
+    return primeNumbers
 }
