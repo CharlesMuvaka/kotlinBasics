@@ -3,7 +3,7 @@ fun main() {
 //    println(20.addNumbers())
 //    println(20.addNumber(20))
 
-    val intArray = displayFinobaciNumbers(0,5)
+    val intArray = displayFinobaciNumbers(100)
     for (number in intArray){
         println(number)
     }
@@ -21,14 +21,13 @@ fun Int.addNumber(number: Int): Int {
     return this + number
 }
 
-fun displayFinobaciNumbers(start:Int, end:Int): HashSet<Int>{
-
-    val finobaciNumbers = HashSet<Int>()
-    finobaciNumbers.add(start)
-    for (i in start..end){
-        var numberIterator: Iterator<Int> = finobaciNumbers.iterator()
-        println(numberIterator.toString())
-//        var secondNumber =  finobaciNumbers.
+fun displayFinobaciNumbers(end:Int): ArrayList<Int>{
+    val finobaciNumbers = ArrayList<Int>()
+    finobaciNumbers.add(0)
+    finobaciNumbers.add(1)
+    for (i in 0 .. end){
+        var number = finobaciNumbers[i] + finobaciNumbers[i + 1]
+        finobaciNumbers.add(number)
     }
     return finobaciNumbers
 }
