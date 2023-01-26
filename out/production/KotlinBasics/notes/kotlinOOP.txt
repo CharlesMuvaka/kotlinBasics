@@ -1,0 +1,42 @@
+
+        kotlin - OOP
+ - kotlin is both a functional and Object-Oriented Programming language.
+ - It expresses its functional nature using functions, lambdas or high order functions
+ - It uses classes as an Object-Oriented language
+
+        Classes
+  - These are blueprints that define the template of an object.
+  - To create a class we use the class Keyword followed by the name of the class.
+  - A class contains a header and a body.
+  - The header is the declaration and the name of the class.
+  -The body is encapsulated in curly braces and contains the member variables and methods of the class.
+  - By default a class is public, it can be accessed from outside its package.
+  - Example
+        class Student{ // class header
+            val id: Int
+            val name: String // class body
+        }
+
+        Objects
+  - This is an instance of a class
+  - Formed by assigning a variable to a class
+  - Example
+        val studentOne = student();
+  - We can access the members and properties of an object using the dot notation.
+  Example
+        studentOne.id = 1 // assigning the students id's value.
+        student.name //getting the students name value
+
+        Nested Classes
+  This are classes that are inside other classes.
+  - In kotlin these classes are static by default - You can access them directly using their outer class.
+  - Inside the nested class you cannot access the members of the outer class.
+  - Example.
+        class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.MyHolder>(){}
+        // both Adapter and MyHolder are nested classes inside the RecyclerView and the RecyclerAdapter respectively.
+
+        Inner Classes
+  - These are nested classes marked with the inner keyword
+  - They are the opposite of Nested classes
+  - They are non-static - We access them by instances of the class.
+  - They can access members of the outer class.
