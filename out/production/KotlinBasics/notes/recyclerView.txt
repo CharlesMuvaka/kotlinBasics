@@ -1,0 +1,19 @@
+RecyclerView
+- An enhancement of both the list and grid views
+
+        Creating a slider
+   -All layout managers have a snackHelper class that helps in animating recyclerView layouts
+   -Example
+        LinearSnapHelper helper = new LinearSnapHelper()
+        helper.attachRecyclerView() // contains a method that can attach a recycler view to it
+
+        -- You can schedule the duration of the sliding effect using a time with its schedule method.
+        Timer timer = new Timer()
+        timer.schedule(new TimerTask(){
+            @Override
+            public void run(){
+                if(){
+
+                }
+            }
+        }delay: 0, period: 3000)
