@@ -1,0 +1,9 @@
+        Kotlin collections
+- collections are group of objects stored together.
+-just as in java, kotlin has the following collection classes
+    1.Lists
+    2.Sets
+    3.Map
+- They are further categorised based on their mutability status
+- The mentioned interfaces are immutable - they cannot be reassigned once declared
+- They also don't provide methods to add items into them one assigned.
