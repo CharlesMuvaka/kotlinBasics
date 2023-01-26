@@ -25,3 +25,14 @@
             3. An on premise cloud - This is a situation where cloud infrastructure is run on an on premise
                                     data center.
                                     - It is kinda expensive but some organisations require such scenarios.
+
+                       Software Development Life Cycle
+ - This is a process used to develop and produce software in an organised and disciplined manner
+ - It consists of the following steps
+            1. Plan(Problem Statement) - Identifying the problem at hand and resources needed to solve the problem.
+            2. Analyze - Stating the results to be gotten from the solution and gathering requirements needed.
+            3. Design - Coming up with prototypes and selecting the architecture to be used.
+            4. Develop - An appropriate programming language is used to develop the software
+            5. Test - Writing code to test the functionality of the software code.
+            6. Deploy - Hoisting the ready made software
+            7. Maintenance - update and fixing incoming bugs.
