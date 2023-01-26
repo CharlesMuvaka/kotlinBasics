@@ -1,0 +1,16 @@
+                        Cloud computing
+ - A cloud is a computer stored in a different location that can be accessed via the internet
+ - Cloud computing refers to the on-demand delivery of I.T services via the internet with pay-as-you-go pricing.
+
+                        Cloud computing Models
+ - there are three types
+                1. Infrastructure as a service
+ - A vendor rents out the whole server, operating system. The provider has no control over the system once it is
+ in your possession
+                2. Platform as a service
+ - Provision of platforms to the developers that can help them in software development.
+ - The owner has control over the system in terms of updates, maintenance and the operating system
+                3. Software as a service
+ - End users are presented with ready application to use. The Owner is responsible for everything regarding the
+  software product.
+ - The user is only responsible for using the software as it is.
