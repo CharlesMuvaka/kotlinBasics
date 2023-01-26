@@ -14,3 +14,14 @@
  - End users are presented with ready application to use. The Owner is responsible for everything regarding the
   software product.
  - The user is only responsible for using the software as it is.
+
+                      Cloud deployment Models
+ - These represent different environments in which you can deploy your applications
+ - They consist of three
+            1. Cloud - The application is deployed to a remote computer that can only be accessed
+                        via the internet
+            2. Hybrid - This is a situation where an organisation has a cloud and on premise server.
+                       -Deployment can occur in both areas.
+            3. An on premise cloud - This is a situation where cloud infrastructure is run on an on premise
+                                    data center.
+                                    - It is kinda expensive but some organisations require such scenarios.
