@@ -4,6 +4,7 @@ import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
 import java.io.Reader
+import java.util.LinkedList
 
 ///*
 // *
@@ -38,7 +39,11 @@ class ForgeStormBreaker {
     init {
         try {
             val file = File("forgestormbreaker.txt")
-            if (file.exists()){
+            val file1 = File("forgestormbreaker1.txt")
+            val file2 = File("forgestormbreaker2.txt")
+            val file3 = File("forgestormbreaker3.txt")
+
+            if (file3.exists()){
                 //initialising a file reader to reade the byte contents of the file
                 val fileReader = FileReader(file)
 
@@ -51,8 +56,37 @@ class ForgeStormBreaker {
                 // getting the columns of the 2D array
                 val columns = bufferedReader.readLine().toInt()
 
+                //defining a queue to store the flux intensity
+                val fluxIntensityQueue = LinkedList<Int>()
+
+                //reading the remaining lines to get the flux intensity of the neuron star
+                for(i in 0 until  rows){
+                    var fluxIntensityString = bufferedReader.readLine()
+                    println(fluxIntensityString)
+                    for (j in fluxIntensityString.indices){
+                        if (fluxIntensityString[j].isDigit()){
+                            fluxIntensityQueue.add(fluxIntensityString[j].digitToInt())
+                        }
+                    }
+
+                }
+
+                //initialising a 2D array
+                val matrix = Array(rows) { IntArray(columns) }
+
+                for (i in 0..fluxIntensityQueue.size){
+                    println(fluxIntensityQueue[i])
+
+//                    for (j in 0 until  matrix[i].size){
+//
+//                    }
+                }
+
             }else{
                 file.createNewFile()
+                file1.createNewFile()
+                file2.createNewFile()
+                file3.createNewFile()
             }
         }catch (e:Exception){
             println(e.message)
