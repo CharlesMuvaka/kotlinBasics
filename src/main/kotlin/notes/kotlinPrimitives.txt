@@ -1,0 +1,12 @@
+                                    Kotlin DataTypes
+- These are classification of data that tell the compiler hoe the programmer intends to use the data.
+                        Int
+- Fall under Integer data type and usually stores 8 bits.
+            Common methods associated with int
+     1. toInt() - Converts a string to an int. Note if the string cannot be converted to an integer, the
+                    compiler throws a number format exception.
+
+                        Strings
+- A string a sequence of characters enclosed in quotation marks.
+
+                    Methods Associated with
