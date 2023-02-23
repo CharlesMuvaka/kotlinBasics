@@ -55,7 +55,7 @@ class LocateTitan {
             if (inputFile.exists()){
 
                 //initialising a file reader to read the file byte content
-                val fileReader = FileReader(inputFile3)
+                val fileReader = FileReader(inputFile)
 
                 //initialising a buffered reader to read the files actual content
                 val bufferedReader = BufferedReader(fileReader)
@@ -80,13 +80,21 @@ class LocateTitan {
                 for (i in 0 until generators){
                     var graphEdges = bufferedReader.readLine().split(" ")
                     for (j in graphEdges.indices){
-                        edgeQueue.add(graphEdges[j].toInt())
+                        if (graphEdges[j].isNotBlank()){
+                            edgeQueue.add(graphEdges[j].toInt())
+                        }
                     }
                 }
 
                 for (i in 0 until generators){
+                    val cost = functionalityValueMap[i]
                     for (j in 0 until generators){
+                        val cost1 = functionalityValueMap[j]
                         matrix[i][j] = edgeQueue.remove()
+                        if (cost != null) {
+                            // defining the edge based on the total cost of the vertices
+                            matrix[i][j] = (matrix[i][j]/ (cost * cost1!!)).toInt()
+                        }
                         print("${matrix[i][j]} ")
                     }
                     println(" ")
