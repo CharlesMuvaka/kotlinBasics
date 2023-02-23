@@ -10,3 +10,4 @@
 - A string a sequence of characters enclosed in quotation marks.
 
                     Methods Associated with
+     1. split() - Groups a string(Character sequence) to a list of strings based on a given regex expression.
