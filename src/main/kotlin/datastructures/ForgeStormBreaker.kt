@@ -45,7 +45,7 @@ class ForgeStormBreaker {
 
             if (file3.exists()){
                 //initialising a file reader to reade the byte contents of the file
-                val fileReader = FileReader(file3)
+                val fileReader = FileReader(file1)
 
                 // initialising a buffered reader to read the actual content from the reader
                 val bufferedReader = BufferedReader(fileReader)
@@ -65,7 +65,6 @@ class ForgeStormBreaker {
                     for (j in fluxIntensityString.indices){
                         if (fluxIntensityString[j].isNotBlank()){
                             fluxIntensityQueue.add(fluxIntensityString[j].toInt())
-                            println(fluxIntensityQueue.remove())
 
                         }
                     }
@@ -75,13 +74,16 @@ class ForgeStormBreaker {
                 //initialising a 2D array
                 val matrix = Array(rows) { IntArray(columns) }
 
-                for (i in 0..fluxIntensityQueue.size){
-//                    println(fluxIntensityQueue[i])
-
-//                    for (j in 0 until  matrix[i].size){
-//
-//                    }
+                //define a variable to store the flux intensity sum
+                for (i in 0 until rows){
+                    for (j in 0 until  columns){
+                        matrix[i][j] = fluxIntensityQueue.remove()
+                        print("${matrix[i][j]} ")
+                    }
+                    println(" ")
                 }
+
+                println("Graph's total flux intensity: $sum")
 
             }else{
                 file.createNewFile()
