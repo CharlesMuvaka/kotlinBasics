@@ -45,7 +45,7 @@ class ForgeStormBreaker {
 
             if (file3.exists()){
                 //initialising a file reader to reade the byte contents of the file
-                val fileReader = FileReader(file)
+                val fileReader = FileReader(file3)
 
                 // initialising a buffered reader to read the actual content from the reader
                 val bufferedReader = BufferedReader(fileReader)
@@ -61,11 +61,12 @@ class ForgeStormBreaker {
 
                 //reading the remaining lines to get the flux intensity of the neuron star
                 for(i in 0 until  rows){
-                    var fluxIntensityString = bufferedReader.readLine()
-                    println(fluxIntensityString)
+                    var fluxIntensityString = bufferedReader.readLine().split(" ")
                     for (j in fluxIntensityString.indices){
-                        if (fluxIntensityString[j].isDigit()){
-                            fluxIntensityQueue.add(fluxIntensityString[j].digitToInt())
+                        if (fluxIntensityString[j].isNotBlank()){
+                            fluxIntensityQueue.add(fluxIntensityString[j].toInt())
+                            println(fluxIntensityQueue.remove())
+
                         }
                     }
 
@@ -75,7 +76,7 @@ class ForgeStormBreaker {
                 val matrix = Array(rows) { IntArray(columns) }
 
                 for (i in 0..fluxIntensityQueue.size){
-                    println(fluxIntensityQueue[i])
+//                    println(fluxIntensityQueue[i])
 
 //                    for (j in 0 until  matrix[i].size){
 //
