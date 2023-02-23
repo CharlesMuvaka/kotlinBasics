@@ -3,6 +3,7 @@ package datastructures
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
+import java.util.LinkedList
 import javax.annotation.processing.FilerException
 
 
@@ -54,13 +55,34 @@ class LocateTitan {
             if (inputFile.exists()){
 
                 //initialising a file reader to read the file byte content
-                val fileReader = FileReader(inputFile)
+                val fileReader = FileReader(inputFile3)
 
                 //initialising a buffered reader to read the files actual content
                 val bufferedReader = BufferedReader(fileReader)
 
                 //reading the number of generators in the graph
                 val generators = bufferedReader.readLine().toInt()
+
+                //initialize a map to store a generator and its functionality value
+                val functionalityValueMap = HashMap<Int, Double>()
+
+                for (i in 0 until generators){
+                    var generatorAndValue = bufferedReader.readLine().split(" ")
+                    functionalityValueMap[generatorAndValue[0].toInt()] = generatorAndValue[1].toDouble()
+                }
+
+                //initialising a matrix to store the graphs data
+                val matrix = Array(generators){IntArray(generators)}
+
+                //initialising a queue to store the graph edges
+                val edgeQueue = LinkedList<Int>()
+
+                for (i in 0 until generators){
+                    var graphEdges = bufferedReader.readLine().split(" ")
+                    for (j in graphEdges.indices){
+                        edgeQueue.add(graphEdges[j].toInt())
+                    }
+                }
 
             }else{
                 inputFile.createNewFile()
