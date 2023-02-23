@@ -59,7 +59,8 @@ class LocateTitan {
                 //initialising a buffered reader to read the files actual content
                 val bufferedReader = BufferedReader(fileReader)
 
-
+                //reading the number of generators in the graph
+                val generators = bufferedReader.readLine().toInt()
 
             }else{
                 inputFile.createNewFile()
