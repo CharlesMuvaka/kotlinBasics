@@ -84,6 +84,14 @@ class LocateTitan {
                     }
                 }
 
+                for (i in 0 until generators){
+                    for (j in 0 until generators){
+                        matrix[i][j] = edgeQueue.remove()
+                        print("${matrix[i][j]} ")
+                    }
+                    println(" ")
+                }
+
             }else{
                 inputFile.createNewFile()
                 inputFile1.createNewFile()
