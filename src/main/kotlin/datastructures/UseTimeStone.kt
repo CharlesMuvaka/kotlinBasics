@@ -87,6 +87,10 @@ class UseTimeStone {
                 for (i in 0 until vertices){
                     //creating a string array of the graph edges
                     val edges = bufferedReader.readLine().split(" ")
+                    for (j in edges.indices){
+                        //storing the graph edges in the matrix
+                        matrix[i][j] = edges[j].toInt()
+                    }
                 }
 
 
