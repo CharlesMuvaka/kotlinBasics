@@ -54,6 +54,11 @@ class MindStoneNeighborNeurons {
                 //initialising a buffered reader to read the files actual content
                 val bufferedReader = BufferedReader(fileReader)
 
+                //reading number of neurons (vertices in the graph)
+                val vertices = bufferedReader.readLine().toInt()
+
+
+
 
             }else{
                 inputFile.createNewFile()
