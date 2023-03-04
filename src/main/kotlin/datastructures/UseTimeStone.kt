@@ -65,6 +65,12 @@ class UseTimeStone {
                 //reading the expected utility (EU) threshold
                 val expectedEU = bufferedReader.readLine().toInt()
 
+                //reading the number of events (vertices in the graph)
+                val vertices = bufferedReader.readLine().toInt()
+
+                //initialising a map to store the vertices with the threshold
+                val verticeAndEu = HashMap<Int, Int>()
+
 
             }else{
                 inputFile.createNewFile()
