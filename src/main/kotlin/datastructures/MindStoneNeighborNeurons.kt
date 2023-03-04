@@ -33,7 +33,9 @@ import java.io.IOException
  *
  * @author Charles Muvaka
  */
-
+fun main() {
+    val mindStoneNeighborNeurons = MindStoneNeighborNeurons()
+}
 class MindStoneNeighborNeurons {
 
     init{
@@ -57,8 +59,14 @@ class MindStoneNeighborNeurons {
                 //reading number of neurons (vertices in the graph)
                 val vertices = bufferedReader.readLine().toInt()
 
+                //initialising a vertices name array
+                val vertexName:Array<String> = Array(vertices) { "" }
 
-
+                for (i in 0 until vertices){
+                    //reading the name of the vertices from the file
+                    val name = bufferedReader.readLine()
+                    vertexName[i] = name
+                }
 
             }else{
                 inputFile.createNewFile()
