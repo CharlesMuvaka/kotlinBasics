@@ -74,6 +74,12 @@ class MindStoneNeighborNeurons {
                 //initialising the mind stone vertex
                 val mindStoneVertex = vertexName[vertexName.size - 1]
 
+                for (i in 0 until edges){
+                    //creating a string array of the graph edges
+                    val graphEdges = bufferedReader.readLine().split(" ")
+
+                }
+
             }else{
                 inputFile.createNewFile()
                 inputFile1.createNewFile()
