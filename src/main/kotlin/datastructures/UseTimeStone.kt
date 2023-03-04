@@ -4,6 +4,9 @@ import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
 import java.io.IOException
+import java.util.PriorityQueue
+import java.util.Queue
+import java.util.Stack
 
 /*
  * Given a starting event and an Adjacency Matrix representing a graph of all possible
@@ -94,6 +97,9 @@ class UseTimeStone {
                 }
 
 
+                depthFirstTraversal(verticesAndEu, matrix)
+
+
 
 
             }else{
@@ -105,6 +111,50 @@ class UseTimeStone {
         }catch (e: IOException){
             println(e.message)
         }
+    }
+
+    private fun depthFirstTraversal( verticesAndEu: HashMap<Int, Int>, matrix: Array<IntArray>) {
+        //initialising an int to store the number of timelines
+        var timelines: Int = 0
+
+        //initialising an int to store the number of timelines
+        var timelinesEU: Int = 0
+
+        //initialising a stack to store the vertices being traversed
+        val vertexStack = Stack<Int>()
+
+        //initialising a queue to add traversed vertices
+        val verticesQueue = HashMap<Int, IntArray>()
+
+        //adding the start vertex on the stack
+        vertexStack.add(verticesAndEu.keys.elementAt(0))
+        timelines += vertexStack.size
+
+
+
+            for (i in matrix.indices){
+                while (vertexStack.size != 0){
+                    //getting and removing the starting vertex
+                    val startVertex = vertexStack.pop()
+                    timelinesEU += verticesAndEu[startVertex]!!
+                    println(timelinesEU)
+
+                    for(j in matrix[startVertex].indices){
+                        print(matrix[startVertex][j])
+                        if (matrix[startVertex][j] == 1){
+                            vertexStack.push(j)
+                            timelines++
+
+//                        println(j)
+                        }
+                    }
+                    println()
+                }
+            }
+        println(timelines)
+
+
+
     }
 }
 
