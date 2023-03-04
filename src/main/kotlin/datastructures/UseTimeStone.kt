@@ -75,6 +75,9 @@ class UseTimeStone {
                 for (i in 0 until vertices){
                     //creating an array string containing the vertex and its eu
                     val vertexAndEu = bufferedReader.readLine().split(" ")
+
+                    //storing the vertex and its eu in the map
+                    verticesAndEu[vertexAndEu[0].toInt()] = vertexAndEu[1].toInt()
                 }
 
 
