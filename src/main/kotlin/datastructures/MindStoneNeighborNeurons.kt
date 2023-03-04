@@ -51,7 +51,7 @@ class MindStoneNeighborNeurons {
 
             if (inputFile.exists()){
                 //initialising a file reader instance to read the file
-                val fileReader = FileReader(inputFile)
+                val fileReader = FileReader(inputFile3)
 
                 //initialising a buffered reader to read the files actual content
                 val bufferedReader = BufferedReader(fileReader)
@@ -74,12 +74,21 @@ class MindStoneNeighborNeurons {
                 //initialising the mind stone vertex
                 val mindStoneVertex = vertexName[vertexName.size - 1]
 
+                //initialising a list to store the vertices connected to the mind stone vertex
+                val verticesList = ArrayList<String>()
+
                 for (i in 0 until edges){
                     //creating a string array of the graph edges
                     val graphEdges = bufferedReader.readLine().split(" ")
-
+                    if (graphEdges[1] == mindStoneVertex){
+                        //storing the vertices connected to the mind stone vertex in the list
+                        verticesList.add(graphEdges[0])
+                    }
                 }
 
+                for (i in 0 until verticesList.size){
+                    println(verticesList[i])
+                }
             }else{
                 inputFile.createNewFile()
                 inputFile1.createNewFile()
