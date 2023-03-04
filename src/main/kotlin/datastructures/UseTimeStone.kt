@@ -69,7 +69,14 @@ class UseTimeStone {
                 val vertices = bufferedReader.readLine().toInt()
 
                 //initialising a map to store the vertices with the threshold
-                val verticeAndEu = HashMap<Int, Int>()
+                val verticesAndEu = HashMap<Int, Int>()
+
+                //reading vertex and its expected eu from the file
+                for (i in 0 until vertices){
+                    //creating an array string containing the vertex and its eu
+                    val vertexAndEu = bufferedReader.readLine().split(" ")
+                }
+
 
 
             }else{
