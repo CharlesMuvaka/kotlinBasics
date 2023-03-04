@@ -80,6 +80,12 @@ class UseTimeStone {
                     verticesAndEu[vertexAndEu[0].toInt()] = vertexAndEu[1].toInt()
                 }
 
+                //initialising a matrix to represent the graph data
+                val matrix = Array(vertices){IntArray(vertices)}
+
+
+
+
 
 
             }else{
