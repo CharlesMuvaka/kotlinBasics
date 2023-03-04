@@ -83,7 +83,11 @@ class UseTimeStone {
                 //initialising a matrix to represent the graph data
                 val matrix = Array(vertices){IntArray(vertices)}
 
-
+                //reading the graph edges from the file
+                for (i in 0 until vertices){
+                    //creating a string array of the graph edges
+                    val edges = bufferedReader.readLine().split(" ")
+                }
 
 
 
