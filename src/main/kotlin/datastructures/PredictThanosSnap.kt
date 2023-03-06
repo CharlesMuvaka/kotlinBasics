@@ -50,7 +50,11 @@ import java.io.FileReader
  */
 
 class PredictThanosSnap {
-    fun readFromTheInPutFile(){
+
+    init {
+        readFromTheInPutFile()
+    }
+    private fun readFromTheInPutFile(){
         val inputFile = File("predictthanossnap.in")
         val inputFile1 = File("predictthanossnap1.in")
         val inputFile2 = File("predictthanossnap2.in")
