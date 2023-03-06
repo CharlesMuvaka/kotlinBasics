@@ -66,6 +66,8 @@ class PredictThanosSnap {
             //reading the seed for the random number generator from the input file
             val seed = bufferedReader.readLine().toInt()
 
+            //reading the number of people (vertices in the graph)
+            val vertices = bufferedReader.readLine().toInt()
 
         }else{
             inputFile.createNewFile()
