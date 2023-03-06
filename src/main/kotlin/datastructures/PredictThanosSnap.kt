@@ -72,7 +72,13 @@ class PredictThanosSnap {
             //initialising a matrix to store the graph edges
             val matrix = Array(vertices){IntArray(vertices)}
 
-
+            //reading the graph edges from the file
+            for (i in 0 until vertices){
+                val edges = bufferedReader.readLine().split(" ")
+                for (j in edges.indices){
+                    matrix[i][j] = edges[j].toInt()
+                }
+            }
 
         }else{
             inputFile.createNewFile()
