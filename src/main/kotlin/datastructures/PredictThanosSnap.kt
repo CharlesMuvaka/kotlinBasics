@@ -69,6 +69,11 @@ class PredictThanosSnap {
             //reading the number of people (vertices in the graph)
             val vertices = bufferedReader.readLine().toInt()
 
+            //initialising a matrix to store the graph edges
+            val matrix = Array(vertices){IntArray(vertices)}
+
+
+
         }else{
             inputFile.createNewFile()
             inputFile1.createNewFile()
