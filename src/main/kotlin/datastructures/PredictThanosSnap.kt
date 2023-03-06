@@ -49,6 +49,10 @@ import java.io.FileReader
  * @author Charles Muvaka
  */
 
+fun main() {
+    val predictThanosSnap = PredictThanosSnap()
+}
+
 class PredictThanosSnap {
 
     init {
