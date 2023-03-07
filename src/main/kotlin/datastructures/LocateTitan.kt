@@ -1,5 +1,6 @@
 package datastructures
 
+import datastructures.models.Graph
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
@@ -71,8 +72,8 @@ class LocateTitan {
                     functionalityValueMap[generatorAndValue[0].toInt()] = generatorAndValue[1].toDouble()
                 }
 
-                //initialising a matrix to store the graphs data
-                val matrix = Array(generators){IntArray(generators)}
+                //initialising a graph instance
+                val graph = Graph(generators)
 
                 //initialising a queue to store the graph edges
                 val edgeQueue = LinkedList<Int>()
@@ -90,12 +91,12 @@ class LocateTitan {
                     val cost = functionalityValueMap[i]
                     for (j in 0 until generators){
                         val cost1 = functionalityValueMap[j]
-                        matrix[i][j] = edgeQueue.remove()
+                        graph.matrix[i][j] = edgeQueue.remove()
                         if (cost != null) {
                             // defining the edge based on the total cost of the vertices
-                            matrix[i][j] = (matrix[i][j]/ (cost * cost1!!)).toInt()
+                            graph.matrix[i][j] = (graph.matrix[i][j]/ (cost * cost1!!)).toInt()
                         }
-                        print("${matrix[i][j]} ")
+                        print("${graph.matrix[i][j]} ")
                     }
                     println(" ")
                 }
