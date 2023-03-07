@@ -94,7 +94,8 @@ class LocateTitan {
                         graph.matrix[i][j] = edgeQueue.remove()
                         if (cost != null) {
                             // defining the edge based on the total cost of the vertices
-                            graph.matrix[i][j] = (graph.matrix[i][j]/ (cost * cost1!!)).toInt()
+                            val k = (graph.matrix[i][j]/ (cost * cost1!!)).toInt()
+                            graph.addGraphEdges(i,j,k)
                         }
                         print("${graph.matrix[i][j]} ")
                     }
