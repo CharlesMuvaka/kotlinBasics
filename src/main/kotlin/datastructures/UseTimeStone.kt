@@ -4,8 +4,6 @@ import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
 import java.io.IOException
-import java.util.PriorityQueue
-import java.util.Queue
 import java.util.Stack
 
 /*
@@ -95,12 +93,7 @@ class UseTimeStone {
                         matrix[i][j] = edges[j].toInt()
                     }
                 }
-
-
                 depthFirstTraversal(verticesAndEu, matrix)
-
-
-
 
             }else{
                 inputFile.createNewFile()
@@ -130,8 +123,6 @@ class UseTimeStone {
         vertexStack.add(verticesAndEu.keys.elementAt(0))
         timelines += vertexStack.size
 
-
-
             for (i in matrix.indices){
                 while (vertexStack.size != 0){
                     //getting and removing the starting vertex
@@ -144,7 +135,6 @@ class UseTimeStone {
                         if (matrix[startVertex][j] == 1){
                             vertexStack.push(j)
                             timelines++
-
 //                        println(j)
                         }
                     }
