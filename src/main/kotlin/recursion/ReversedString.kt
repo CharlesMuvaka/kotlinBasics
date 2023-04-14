@@ -27,4 +27,6 @@ class ReversedString {
 fun main() {
     println(ReversedString().reverseString("You are good"))
     println(ReversedString().isPalindrome("eye"))
+    val one = "You are good"
+    println(one.reversed())
 }
