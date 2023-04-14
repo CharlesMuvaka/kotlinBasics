@@ -3,6 +3,7 @@ package datastructures
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
+import java.io.IOException
 
 /*
   * Given an adjacency matrix, use a random() function to remove half of the nodes.
@@ -59,41 +60,44 @@ class PredictThanosSnap {
         readFromTheInPutFile()
     }
     private fun readFromTheInPutFile(){
-        val inputFile = File("predictthanossnap.in")
-        val inputFile1 = File("predictthanossnap1.in")
-        val inputFile2 = File("predictthanossnap2.in")
-        val inputFile3 = File("predictthanossnap3.in")
+        try {
+            val inputFile = File("predictthanossnap.in")
+            val inputFile1 = File("predictthanossnap1.in")
+            val inputFile2 = File("predictthanossnap2.in")
+            val inputFile3 = File("predictthanossnap3.in")
 
-        //initialising a file reader to read the byte contents of the file
-        val fileReader = FileReader(inputFile)
+            if (inputFile.exists()){
+                //initialising a file reader to read the byte contents of the file
+                val fileReader = FileReader(inputFile)
 
-        //initialising a buffered reader to read the actual contents of the file
-        val bufferedReader = BufferedReader(fileReader)
+                //initialising a buffered reader to read the actual contents of the file
+                val bufferedReader = BufferedReader(fileReader)
+                //reading the seed for the random number generator from the input file
+                val seed = bufferedReader.readLine().toInt()
 
-        if (inputFile.exists()){
-            //reading the seed for the random number generator from the input file
-            val seed = bufferedReader.readLine().toInt()
+                //reading the number of people (vertices in the graph)
+                val vertices = bufferedReader.readLine().toInt()
 
-            //reading the number of people (vertices in the graph)
-            val vertices = bufferedReader.readLine().toInt()
+                //initialising a matrix to store the graph edges
+                val matrix = Array(vertices){IntArray(vertices)}
 
-            //initialising a matrix to store the graph edges
-            val matrix = Array(vertices){IntArray(vertices)}
-
-            //reading the graph edges from the file
-            for (i in 0 until vertices){
-                val edges = bufferedReader.readLine().split(" ")
-                for (j in edges.indices){
-                    matrix[i][j] = edges[j].toInt()
+                //reading the graph edges from the file
+                for (i in 0 until vertices){
+                    val edges = bufferedReader.readLine().split(" ")
+                    for (j in edges.indices){
+                        matrix[i][j] = edges[j].toInt()
+                    }
                 }
+
+            }else{
+                inputFile.createNewFile()
+                inputFile1.createNewFile()
+                inputFile2.createNewFile()
+                inputFile3.createNewFile()
             }
 
-        }else{
-            inputFile.createNewFile()
-            inputFile1.createNewFile()
-            inputFile2.createNewFile()
-            inputFile3.createNewFile()
+        }catch (ex: IOException){
+            println(ex.message)
         }
-
     }
 }
