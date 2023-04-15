@@ -21,12 +21,24 @@ class ReversedString {
         }
         return false
     }
+
+    fun decimalToBinary(decNumber: Int): String{
+        var binNumber: String = ""
+        //Base case to terminate the method
+        if (decNumber == 0){
+            return binNumber
+        }
+        var reminder = (decNumber % 2).toString()
+        binNumber += reminder
+        return decimalToBinary(decNumber/2)
+    }
 }
 
 
 fun main() {
-    println(ReversedString().reverseString("You are good"))
-    println(ReversedString().isPalindrome("eye"))
+    //println(ReversedString().reverseString("You are good"))
+    //println(ReversedString().isPalindrome("eye"))
     val one = "You are good"
-    println(one.reversed())
+    //println(one.reversed())
+    println(ReversedString().decimalToBinary(100))
 }
