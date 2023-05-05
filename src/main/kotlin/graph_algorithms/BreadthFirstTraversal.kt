@@ -70,3 +70,24 @@ fun main() {
     }
 }
 
+fun breadthFirstTraversal(start: Int, matrix: Array<IntArray> ){
+    //initialising a queue to store the nodes being traversed
+    val nodes = PriorityQueue<Int>()
+
+    //adding the start node to the queue
+    nodes.add(start)
+
+    // creating a condition to terminate the program
+    while (!nodes.isEmpty()){
+        //getting the node being traversed through
+        val current = nodes.remove()
+        print("$current ---> ")
+
+        //adding the neighbors of the current node being traversed
+        for (i in matrix[current].indices){
+            if (matrix[current][i] == 1){
+                nodes.add(i)
+            }
+        }
+    }
+}
