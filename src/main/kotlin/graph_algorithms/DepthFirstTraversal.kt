@@ -39,3 +39,13 @@ fun main() {
     }
 }
 
+fun recursiveDepthFirstTraversal(i: Int, matrix: Array<IntArray>) {
+    //printing out the current node being traversed
+    print("$i ---> ")
+    for (j in 0 until matrix[i].size){
+        if (matrix[i][j] == 1){
+            recursiveDepthFirstTraversal(j, matrix)
+        }
+    }
+}
+
