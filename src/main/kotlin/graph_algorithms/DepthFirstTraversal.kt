@@ -49,3 +49,23 @@ fun recursiveDepthFirstTraversal(i: Int, matrix: Array<IntArray>) {
     }
 }
 
+fun depthFirstTraversal(start: Int, matrix: Array<IntArray>) {
+    //initialising a stack to hold the nodes being traversed
+    val nodes = Stack<Int>()
+
+    //adding the start node to the stack
+    nodes.add(start)
+
+    //performing the traversal
+    while (!nodes.isEmpty()) {
+        //getting the current node to be traversed
+        val current = nodes.pop()
+        print("$current ---> ")
+        for (i in 0 until matrix[current].size) {
+            if (matrix[current][i] == 1) {
+                nodes.push(i)
+            }
+        }
+    }
+
+}
