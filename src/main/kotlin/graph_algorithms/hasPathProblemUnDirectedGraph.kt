@@ -29,12 +29,12 @@ import java.io.IOException
           terminating the infinite loop.
  */
 
-fun main(){
+fun main() {
     //defining node names
     val nodeNames = charArrayOf('i', 'j', 'k', 'l', 'm', 'n', 'o')
-    try{
+    try {
         val file = File("hasPathUnDirected.in")
-        if (file.exists()){
+        if (file.exists()) {
             val reader = FileReader(file)
             val buffer = BufferedReader(reader)
 
@@ -44,12 +44,12 @@ fun main(){
             val adjacencyList = ArrayList<Node>()
 
             //creating the graph nodes
-            for (i in 0 until rows){
+            for (i in 0 until rows) {
                 val node = Node(nodeNames[i], 0)
                 adjacencyList.add(node)
             }
 
-            for (i in 0 until rows){
+            for (i in 0 until rows) {
                 //reading the graph edges from the input file
                 val stringEdges = buffer.readLine()
 
@@ -57,9 +57,9 @@ fun main(){
                 val edges = stringEdges.split(" ")
 
                 //adding neighbors to the graph nodes based on the matrix
-                for (j in edges.indices){
+                for (j in edges.indices) {
                     val edge = edges[j].toInt()
-                    if (edge == 1){
+                    if (edge == 1) {
                         adjacencyList[i].addNeighbor(adjacencyList[j])
                     }
                 }
@@ -71,10 +71,50 @@ fun main(){
             //displaying the contents of the graph
             graph.displayGraph()
 
-        }else{
+            // initialising a set to monitor the visited nodes
+            val set = HashSet<Node>()
+
+            val start = adjacencyList[0]
+            val destination = adjacencyList[4]
+
+            val result = recursiveHasProblemUndirected(start,destination , set)
+            //printing out the result
+            println("is there a path from $start to $destination: ")
+            println(result)
+
+        } else {
             file.createNewFile()
         }
-    }catch(e :IOException){
+    } catch (e: IOException) {
         println(e.message)
     }
+
+}
+
+fun recursiveHasProblemUndirected(start: Node, destination: Node, set: HashSet<Node>): Boolean {
+
+    //checking if the current node being traversed is in the set
+    if (set.contains(start)) {
+        return false
+    }
+
+    //adding the current node in the set
+    set.add(start)
+
+    print("$start ---> ")
+
+    //confirming if there exists a path between the start and the destination
+    if (start == destination) {
+        return true
+    }
+
+    //traversing through the neighbors
+    for (i in start.neighbors.indices) {
+        if (recursiveHasProblemUndirected(start.neighbors[i], destination, set)) {
+            return true
+        }
+    }
+
+    //when all the above conditions not met, there is no path
+    return false
 }
