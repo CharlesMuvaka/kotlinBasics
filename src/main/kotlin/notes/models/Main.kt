@@ -1,3 +1,5 @@
+package notes.models
+
 fun main(args: Array<String>) {
     //declaring ReadOnly variables - cannot be changed
     val firstName: String = "Charles"

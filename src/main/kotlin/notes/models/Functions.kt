@@ -1,3 +1,5 @@
+package notes.models
+
 fun main() {
 //    println(addNumbers(10,20))
 //    println(20.addNumbers())

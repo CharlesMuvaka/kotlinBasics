@@ -1,3 +1,5 @@
+package notes.models
+
 class Student {
     //Testing about kotlin classess concepts
     var name: String? = null //initialized a member variable of text type. Cannot be accessed outside

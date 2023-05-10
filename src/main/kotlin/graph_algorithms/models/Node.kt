@@ -1,9 +1,16 @@
 package graph_algorithms.models
 
-class Node(val name: Char, val weight: Int) {
+class Node(val name: Char, val weight: Int): Comparable<Node> {
     val neighbors = ArrayList<Node>()
     fun addNeighbor(node: Node){
         neighbors.add(node)
+    }
+
+    override fun compareTo(other: Node): Int {
+        if (this.name == other.name && this.weight == other.weight){
+            return 0;
+        }
+        return 1;
     }
 
     override fun toString(): String {
