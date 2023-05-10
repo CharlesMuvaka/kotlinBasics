@@ -1,11 +1,9 @@
 package graph_algorithms
 
-import graph_algorithms.models.Graph
-import graph_algorithms.models.Node
-import java.io.BufferedReader
-import java.io.File
-import java.io.FileReader
-import java.io.IOException
+import graph_algorithms.models.*
+import java.io.*
+import java.util.*
+import kotlin.collections.*
 
 /*
                                 UnDirected graphs
@@ -81,6 +79,10 @@ fun main() {
             //printing out the result
             println("is there a path from $start to $destination: ")
             println(result)
+            println()
+            println("---------------Breadth First Traversal----------------")
+            //breadthFirstHasProblem(start, destination, set)
+            //depthFirstHasProblem(start, destination, set)
 
         } else {
             file.createNewFile()
@@ -116,5 +118,53 @@ fun recursiveHasProblemUndirected(start: Node, destination: Node, set: HashSet<N
     }
 
     //when all the above conditions not met, there is no path
+    return false
+}
+
+fun breadthFirstHasProblem(start: Node, destination: Node, visited: HashSet<Node>){
+    //initialising a queue to hold the nodes being traversed
+    val graphNodes = PriorityQueue<Node>()
+
+    //adding the start node in the queue
+    val node: Node = start
+    graphNodes.add(node)
+
+    //performing the traversal
+    while (!graphNodes.isEmpty()){
+        val current = graphNodes.remove()
+        print(current)
+        for (i in  current.neighbors.indices){
+            //adding the neighbors in the queue
+            graphNodes.add(current.neighbors[i])
+        }
+    }
+}
+
+fun depthFirstHasProblem(start: Node, destination: Node, visited: HashSet<Node>): Boolean{
+    //initialising a stack to store the nodes being traversed
+    val stack = Stack<Node>()
+
+    //adding the start node in the stack
+    stack.add(start)
+
+    //traversing through the nodes
+    while(!stack.isEmpty()){
+        val current = stack.pop()
+        println(current)
+
+        if (visited.contains(current)){
+            return false
+        }
+
+        if (current.equals(destination)){
+            return true
+        }
+
+        for (i in current.neighbors.indices){
+            val neighbor = current.neighbors[i]
+            stack.push(neighbor)
+        }
+    }
+
     return false
 }
