@@ -113,5 +113,8 @@
           In Keyword in arrays
            - can be used to loop through an array or to check if a certain element exists in the array.
 
+          As Keyword
+           - Used to cast one type to another
+
 
 
