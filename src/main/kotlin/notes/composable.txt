@@ -1,0 +1,64 @@
+                                JetPack compose Composable
+ - Involves defining functions that take in data and emit UI elements.
+ - These functions must be annotated with the @Composable annotation.
+ - These functions usually return nothing when they are called. They only emit the UI elements.
+ - A composable might emit many ui elements, however, if you don't specify how the elements are to be arranged,
+    they might be arranged in a way ou don't like. On tp of each other.
+ - Example:
+
+    @Composable
+    fun greetUser(name: String) {
+        Text("Hello")
+        Text(name)
+    }
+        - Without defining how the texts wil be positioned, compose will pile these texts on top of each other.
+            Making it hard for the user to read.
+        NOTE: To counter this, compose provides a collection of ready to use UI elements to help you arrange your elements.
+
+        Specialized layout components
+       1. Row
+     - Used to place elements horizontally on the screen.
+     Example:
+
+        @Composable
+        fun greetUser(name: String){
+            Row(takes in parameters to effectively decorate the elements){
+                Text("Hello")
+                Text(name)
+            }
+        }
+
+        - The text elements in the above function will be aligned horizontally
+
+        2. Column
+      - Used to place elements vertically on the screen.
+      Example:
+
+            @Composable
+            fun greetUser(name: String){
+                Column(takes in parameters to effectively decorate the elements){
+                    Text("Hello")
+                    Text(name)
+                }
+            }
+
+            - The text elements in the above function will be aligned vertically.
+
+         3. Box
+      - Used to place elements on top of each other.
+      Example:
+
+            @Composable
+            fun suggestMusic(artist: Artist){
+                Box{
+                    Image(bitMap = artist.image, contentDescription = "${artist.name} image")
+                    Icon(Icons.Filled.check, contentDescription = "Music Icon")
+                }
+            }
+
+        Why shift from xml based layouts to compose
+    1. Reduce the cost of shifting layouts during runtime.
+
+                            Specialized components attributes.
+    1. Modifiers
+    - They allow you to decorate a composable.
