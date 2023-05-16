@@ -41,10 +41,46 @@ fun main() {
 
             //displaying the graph nodes
             graph.displayGraph()
+
+            //initialising the set to store visited nodes
+            val visited = HashSet<Node>()
+
+            val count = connectedComponents(graphNodes, visited)
+
+            println("------Printing the number of components")
+            println(count)
         }else{
             file.createNewFile()
         }
     }catch (e: IOException){
         println(e.message)
     }
+}
+
+fun connectedComponents(graphNodes: ArrayList<Node>, visited: HashSet<Node>): Int{
+    //initialising the counter
+    var counter = 0
+
+    for (i in graphNodes.indices){
+        if (exploreNeighbors(graphNodes[i], visited)){
+            counter++
+        }
+    }
+    return counter
+}
+
+fun exploreNeighbors(node: Node, visited: HashSet<Node>): Boolean {
+    if (visited.contains(node)){
+        return false;
+    }
+    //adding the current node in the set
+    visited.add(node)
+
+    for (i in node.neighbors.indices){
+        //performing the traversal recursively
+        exploreNeighbors(node.neighbors[i], visited)
+    }
+
+    return true
+
 }
