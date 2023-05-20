@@ -66,6 +66,21 @@ fun main() {
     }
 
 }
+private fun exploreNeighbor(node: Node, visited: HashSet<Node>): Int {
+    //checking if the current node has already been traversed through
+    if (visited.contains(node)) return 0
+
+    //adding the current node in the set
+    visited.add(node)
+
+    //initialising a variable to store the number of nodes
+    var nodes = 1 //Adding the current node
+    for (i in node.neighbors.indices){
+        //increasing the number when beginning another traversal
+        nodes += exploreNeighbor(node.neighbors[i], visited)
+    }
+    return nodes
+}
 
 
 //defining a method to traverse though the nodes
