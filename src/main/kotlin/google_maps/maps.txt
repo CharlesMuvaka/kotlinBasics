@@ -1,0 +1,43 @@
+                                            Google-maps Api
+- An api that enables users to find locations through-out the globe.
+            Pre-requisites.
+    - You have to have the google-maps sdk installed.
+    - Get an api key to enable you to use the maps api. For tracking usages with the map api.
+    - Add google play services dependency in your project.
+        "com.google.android.gms:google_play_services:1.0.0"
+
+    Process.
+ 1. check the google-play version the user is using.
+    public boolean is ServicesOk(){
+        int available = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this)
+        if(available == ConnectionResult.SUCCESS){
+            return true;
+        }else if(){
+
+        }else{
+
+        }
+        return false;
+    }
+
+ 2. Add google maps metadata
+    - Add the google-map api key
+    Example:
+    <meta-data
+        android:name = ""
+        android:value = "your_api_key"/>
+
+ 3. Add the required permissions.
+    i) Internet permissions.
+    ii) Access fine location.
+    iii) Access coarse location.
+    iv) Access Network state.
+
+ 4. Check if permissions are enabled.
+    Example:
+        publ
+
+
+           Important Objects involved
+ 1. SupportMapFragment - Used to initialize our map instance.
+ 2. GoogleMap - Manipulates the map by deciding where the cursor will be placed among others.
