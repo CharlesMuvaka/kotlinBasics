@@ -29,6 +29,9 @@
         }
 
         - The text elements in the above function will be aligned horizontally
+                Common row Parameters
+             1. verticalAlignment - Used to align the elements either on top of the row, center or at the bottom. Similar to the align-items attribute in css.
+
 
         2. Column
       - Used to place elements vertically on the screen.
@@ -62,3 +65,14 @@
                             Specialized components attributes.
     1. Modifiers
     - They allow you to decorate a composable.
+    - You can set up
+        1. The height of your UI element.
+        2. The width of your UI element.
+        3. The back-ground color of your UI element.
+        4. The maximum height and width of the UI element.
+        5. Adding padding to elements.
+        6. Setting the offset of elements( how far the element will be placed from its original position. Similar to border
+            though it doesn't push the other elements as border would do.)
+
+            Height and width attributes.
+          - You
