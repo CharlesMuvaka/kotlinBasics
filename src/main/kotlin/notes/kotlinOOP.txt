@@ -113,3 +113,38 @@
            - These are parameters that have an initial value in them.
 
 
+
+       High-Order Functions and Lambdas.
+      - High order functions are functions that either accept other functions as parameters or return a function as their return type.
+      - Lambda functions are functions that do not have a name.
+      - Due to their ease in writing lamdas are passed as parameters in high order functions.
+
+      Example:
+                1. High order functions.
+
+                //defining the high order function
+
+                fun highOrder(a: Int, b:Int, marks: (Int, Int) -> Int) :Int{
+                      var totalMarks = marks(a, b)
+                      return totalMarks
+                }
+
+                //calling the high order function
+                - Since the function takes in a lambda as an argument, it will be easier to define the lambda and then assign it to the function.
+
+                //defining the lambda and assigning it to a variable
+                var marks = {catMarks: Int, examMarks: Int -> catMarks + examMarks}
+                highOrder(marks)
+
+                2. Lambdas
+                - Declaring lambda expressions
+                Example
+                        (Int, Int) -> Int
+                - The data types enclosed in the function parameters represent the data type of the arguments to be passed in the function.
+                - When these functions have a return type, then we can assign a variable to them.
+                Example:
+                        val bmi: Double = {height: Double, weight: Double, age: Int -> (height * weight)/age}
+
+
+
+
