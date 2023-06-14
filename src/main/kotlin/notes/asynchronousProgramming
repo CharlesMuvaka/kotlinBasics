@@ -1,0 +1,50 @@
+                                            Asynchronous Programming
+- We always have been confronted with the concept of applications blocking or even the user having to wait for the application to load while a certain process is running.
+- This makes our applications or programs not to be appealing to the users.
+- Several measures have been put in place to assist in this.
+            1. Threading
+            2. Coroutines
+            3. Call backs
+            4. Futures and Promises
+            5. RX observables.
+
+            Threading
+- A thread is a single sequence stream within a process. A process is an execution of a program.
+- Multiple threads can exist in a single process. Threads in a similar process occupy a shared memory space while processes occupy different memory allocations.
+- Threading is a concept of creating different threads to avoid long running processes from blocking the main thread.
+- Blocking the main thread might result to tne UI not loading as specified.
+
+                           Drawbacks of Multithreading
+           1. Threads are not cheap, they require context switches which is very costly.
+           2. Threads aren't infinite, the number of threads that can be launched depends on the type of operating system being used.
+           3. Avoiding race problems and debugging threads becomes a challenge.
+
+           Coroutines.
+- This is the kotlin's way of handling asynchronous programing.
+- A coroutine is an instance of a suspendable computation. It uses the idea that a function can suspend its execution at some point and resume later on.
+- They can be considered as light weight threads though they have some numerous advantages over the latter.
+
+                       Advantages over threads
+            1. The programing models of writing non-blocking and blocking code doesn't change. It remains the same. Only additional keywords maybe used to
+                specify the beginning, delays or end of a coroutine.
+            2. The code is still written a sif we were writing asynchronous code.
+
+            Coroutine Example:
+                        fun main() = runBlocking{ //initialising a coroutineScope
+                                Launch{ // launching a new coroutine and continuing
+                                    delay(1000L)
+                                    println("I am supposed to delay for 1 second")
+                                }
+                                println("I am supposed to be printed after one second has elapsed")
+
+                            }
+
+                      Coroutine functions
+            - coroutine core provides a list of available methods that can assist in creating and managing coroutines.
+
+            1. runBlocking(){} - This is a coroutine scope builder that bridges the non-coroutine world with the code within the coroutine.
+                               - The function accepts a multiple of parameters
+            2. launch(){} - It initialises another coroutine inside a coroutine. The execution of the original coroutine still continues being executed while it
+                           is running.
+            3. delay() - It takes in an argument that specifies the amount of milliseconds to be used in delaying the executing of the coroutine it is called in.
+                        NOTE: The other code in the coroutine scope continues to run while the current coroutine is being delayed.
