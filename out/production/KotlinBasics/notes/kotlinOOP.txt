@@ -40,3 +40,111 @@
   - They are the opposite of Nested classes
   - They are non-static - We access them by instances of the class.
   - They can access members of the outer class.
+
+        Sealed Classes
+    These are restricted class hierarchies that provide more control over inheritance.
+    All its subclasses and objects are known during compile time.
+
+
+
+    Kotlin Functions
+   - A function is a block of code specified to perform a certain task.
+   - Kotlin functions are defined using the fun keyword.
+
+   Example
+        fun printHelloWorld(){
+            println("Hello world")
+        }
+
+            Function parameters
+        - These are special variables that are used to pass data in the function.
+        - They allow functions to perform task without the knowledge of the real values ahead in time.
+        - Kotlin functions accept parameters, they can be named in the case of a function that takes in many parameters or the conventional java approach.
+            NOTE: 1. When using the conventional java way of passing parameters, they must be arranged in the way they follow each other.
+                  Named parameters can be passed in any manner defining their initial parameter names.
+                  2. You must explicitly specify the data type of the parameters.
+
+                  Example:
+                        fun calculateTotalPay(amount: Int, allowances: Int, deductions: Double){
+                            val total = (amount + allowances) - deductions
+                        }
+
+            Calling functions.
+           - Functions are called by specifying the function name followed by adding the parameters it requires.
+           - A function can be declared without parameters.
+
+                Example
+                        1. Named parameters without specifying the precedence ordering
+                        calculateTotalPay(deductions = 1000.09, allowances = 2000000, amount = 10000000)
+
+                        2. unNamed parameters - The precedence of the parameters must be considered.
+                            calculateTotalPay(10000000,2000000,1000.09 )
+
+             Function return types.
+            - A function can return a value or not.
+            - Functions that don't return a value are said to be unit functions. The return type can be specified or not.
+                Example:
+                      Case 1
+                        fun calculateBMI(weight: Double, height: Double, age: Int): Unit{
+                            var bmi = (weight * height)/ age
+                        }
+
+                      Case 2
+                        fun calculateBMI(weight: Double, height: Double, age: Int){
+                            var bmi = (weight * height)/ age
+                        }
+
+                Both cases are valid and acceptable.
+
+             - When a function is said to return a value, the return type of the value must be specified.
+             Example
+                    fun calculateBMI(age: Int, weight: Double, height: Double): Double{
+                        var bmi: Double = (weight * height)/ age
+                        return bmi
+                    }
+
+            Single expression functions.
+           - These are functions that don't have blocks of codes. They actually have  single line in them s the name suggests.
+           - The return types of these functions don't have to specified. The compiler csn infer their return types.
+            Example
+                fun calculateBMI(weight: Double, height: Double, age: Int) = (weight * height)/ age
+
+            Default parameters
+           - These are parameters that have an initial value in them.
+
+
+
+       High-Order Functions and Lambdas.
+      - High order functions are functions that either accept other functions as parameters or return a function as their return type.
+      - Lambda functions are functions that do not have a name.
+      - Due to their ease in writing lamdas are passed as parameters in high order functions.
+
+      Example:
+                1. High order functions.
+
+                //defining the high order function
+
+                fun highOrder(a: Int, b:Int, marks: (Int, Int) -> Int) :Int{
+                      var totalMarks = marks(a, b)
+                      return totalMarks
+                }
+
+                //calling the high order function
+                - Since the function takes in a lambda as an argument, it will be easier to define the lambda and then assign it to the function.
+
+                //defining the lambda and assigning it to a variable
+                var marks = {catMarks: Int, examMarks: Int -> catMarks + examMarks}
+                highOrder(marks)
+
+                2. Lambdas
+                - Declaring lambda expressions
+                Example
+                        (Int, Int) -> Int
+                - The data types enclosed in the function parameters represent the data type of the arguments to be passed in the function.
+                - When these functions have a return type, then we can assign a variable to them.
+                Example:
+                        val bmi: Double = {height: Double, weight: Double, age: Int -> (height * weight)/age}
+
+
+
+
