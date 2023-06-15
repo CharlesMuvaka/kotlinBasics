@@ -43,8 +43,26 @@
             - coroutine core provides a list of available methods that can assist in creating and managing coroutines.
 
             1. runBlocking(){} - This is a coroutine scope builder that bridges the non-coroutine world with the code within the coroutine.
-                               - The function accepts a multiple of parameters
+                               - The function accepts a multiple of parameters.
+                              - It blocks the thread in which it sis called in and the thread only resumes when all the children declared in the scope are complete.
+                              NOTE: Its a better practice to declare this builder as a top level declaration, Its expensive to block and resume threads.
             2. launch(){} - It initialises another coroutine inside a coroutine. The execution of the original coroutine still continues being executed while it
                            is running.
             3. delay() - It takes in an argument that specifies the amount of milliseconds to be used in delaying the executing of the coroutine it is called in.
                         NOTE: The other code in the coroutine scope continues to run while the current coroutine is being delayed.
+
+                       Structured Concurrency
+            - Coroutines use a principle where by they can be only launched in a specific coroutine scope. This delimits the lifetime of a coroutine.
+            - It also ensures that coroutines are not lost and they don't leak.
+            - It also ensures that error handling is simple to conduct.
+
+
+                       Suspend functions
+            - This are functions marked with the suspend keyword.
+            - They can be used inside coroutine scopes, Their advantage is that they can also use other functions associated with the coroutine scope such as delay().
+
+                      Scope Builders
+            - Apart from the run blocking method to initialise a coroutine scope, we can also use CoroutineScope to create our own coroutine scope.
+            - The difference between using the run blocking and  the latter is that run blocking completely blocks the thread in which its declared in while the coroutine scope
+                only suspends.
+            - Just like the run blocking method, it creates a scope and it doesn't complete until all the children declared in it have completed their execution.
