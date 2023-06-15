@@ -1,0 +1,13 @@
+                                    Scope Functions
+ - Kotlin standard library also provides a list of functions whose sole purpose is to execute a block of code in the
+    context of an object.
+ - This functions form a temporary scope that can be used to manipulate the object.
+ - They include
+        1. let{}
+        2. Also{}
+        3. run{}
+        4. with{}
+        5. apply{}
+
+ - All this functions perform the same action, execute a block of code. The diffrence is how the object appears inside the block
+    and the result of the whole expression.
