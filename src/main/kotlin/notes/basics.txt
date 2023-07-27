@@ -116,5 +116,7 @@
           As Keyword
            - Used to cast one type to another
 
+          By Keyword
+           - Used to delegate design patterns of a blue-print to an instance
 
 
