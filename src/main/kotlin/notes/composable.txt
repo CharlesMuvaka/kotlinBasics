@@ -59,6 +59,15 @@
                 }
             }
 
+        4. Image
+        - There are several ways to define images in our composable.
+            1. BitMapImage
+            2. VectorImage
+        - ImageBitmap are used for storing raster images. These are images that contain resolutions in pixels. A painterResource() is used to load the image in the imageBitmap instance.
+        - Vector images are used to load vector assets.
+        NOTE: Image() composable is used in both cases specifying your target in the painterResource() instance.
+            Example: Image(painter = painterResource(R.drawable.dog, contentDescription = "App logo")
+
         Why shift from xml based layouts to compose
     1. Reduce the cost of shifting layouts during runtime.
 
